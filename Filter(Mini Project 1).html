@@ -1,0 +1,78 @@
+<h1>Filter Images</h1>
+<canvas id="can">
+
+</canvas>
+
+<link rel="stylesheet" href="back'.css">
+<script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js">
+    
+</script>
+<script>
+    var image;
+    var image1;
+    
+    
+    function upload()
+    {
+      var imgcanvas=document.getElementById("can");
+      var fileinput=document.getElementById("finput");
+      image=new SimpleImage(fileinput);
+      image.drawTo(imgcanvas);
+    }
+    function makeGray()
+    {
+        
+        for(var pixel of image.values())
+        {
+            var avg=(pixel.getRed()+pixel.getBlue()+pixel.getGreen())/3;
+            pixel.setRed(avg);
+            pixel.setBlue(avg);
+            pixel.setGreen(avg);
+        }
+        var imgcanvas=document.getElementById("can");
+        image.drawTo(imgcanvas);
+    }
+    function makeRed()
+        {
+            
+              for(pixel of image.values())
+              {
+                var avg=(pixel.getRed()+pixel.getBlue()+pixel.getGreen())/3;
+                if(avg<128)
+                {
+                    pixel.setRed(2*avg);
+                    pixel.setBlue(0);
+                    pixel.setGreen(0);
+                }
+                    else
+                    {
+                        pixel.setRed(255);
+                        pixel.setBlue((2*avg)-255);
+                        pixel.setGreen((2*avg)-255);
+                    }
+                    
+              }
+              var imgcanvas=document.getElementById("can");
+              image.drawTo(imgcanvas);
+    }
+               
+</script>
+<p>
+    <input type="file" multiple="false"
+    accept="image/*" id="finput"
+    onchange ="upload()">
+</p>
+<p>
+    <input type="button"
+         value="Make Gray"
+          onclick="makeGray()">
+
+          <input type="button"
+          value="Red"
+           onclick="makeRed()"> 
+</p>
+<p>
+    <input type="button"
+         value="Reset Image"
+          onclick="upload()">
+</p>

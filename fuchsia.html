@@ -1,0 +1,37 @@
+<h1 id="t1">Canvas Practice</h1>
+<canvas id="d1" class="orangeback"> 
+</canvas>
+<canvas id="d2" class="fuchsiaback"> 
+</canvas>
+<link rel="stylesheet" href="back'.css">
+<script>
+function doBlue()
+{
+    var canvas=document.getElementById("d1");
+    canvas.style.backgroundColor="blue";
+    var context=canvas.getContext("2d");
+    context.fillStyle="yellow";
+    context.fillRect(10,10,60,60);
+    context.fillRect(80,10,60,60);
+    context.fillStyle="black";
+    context.font="20px Arial";
+    context.fillText("Hello",15,45);
+}
+function doOrange()
+{
+    var canvas=document.getElementById("d1");
+    var context=canvas.getContext("2d");
+    context.clearRect(0,0,canvas.width,canvas.height);
+    canvas.style.backgroundColor="orange";
+}
+</script>
+
+<p>
+    <input type="button"
+           value="Make Blue"
+           onclick="doBlue()">
+
+    <input type="button"
+           value="Make Orange"
+           onclick="doOrange()">
+  </p>

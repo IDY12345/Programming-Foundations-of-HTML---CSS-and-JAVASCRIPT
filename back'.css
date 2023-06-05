@@ -1,0 +1,23 @@
+canvas{
+    width:400px;
+    height:200px;
+    
+    border:1px solid lightgray;
+  }
+  body {
+    background-color: wheat;
+    font-family: Verdana;
+  }
+  .blueback{
+    background-color:rgb(36, 92, 196);
+  }
+  .orangeback{
+    background-color:orange;
+  }
+  .fuchsiaback
+  {
+    background-color:fuchsia;
+  }
+  input{
+    font-size:20pt;
+  }

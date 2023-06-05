@@ -1,0 +1,29 @@
+<h1 id="t1">Canvas Practice</h1>
+<canvas id="d1"> 
+</canvas>
+<link rel="stylesheet" href="back'.css">
+<script>
+function doBlue()
+{
+    var canvas=document.getElementById("d1");
+    var context=canvas.getContext("2d");
+    var colorinput=document.getElementById("clr1");
+    var color=colorinput.value;
+    canvas.style.backgroundColor=color;
+}
+function doOrange()
+{
+    var canvas=document.getElementById("d1");
+    var context=canvas.getContext("2d");
+    var colorinput=document.getElementById("clr");
+    var color=colorinput.value;
+    canvas.style.backgroundColor=color;
+}
+</script>
+
+<p>
+    <input type="color" 
+           value="001A57"
+           onchange="doOrange()"
+            id="clr">
+  </p>
